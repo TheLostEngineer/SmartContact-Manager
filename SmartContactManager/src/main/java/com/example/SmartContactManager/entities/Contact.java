@@ -1,6 +1,8 @@
 package com.example.SmartContactManager.entities;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "CONTACTS")
@@ -9,10 +11,18 @@ public class Contact {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int cID;
+
+//    @NotBlank(message = "First name cannot be blank")
+//    @Size(min = 3, max = 23456, message = "Name should be more than 3 characters")
     private String name;
     private String secondName;
     private String Work;
+
+//    @NotBlank(message = "Email cannot be blank")
     private String email;
+
+//    @NotBlank(message = "Phone number cannot be blank")
+//    @Size(min = 10, max = 12, message = "Please Enter a Valid Phone Number")
     private String phone;
     private String Image;
     @Column (length = 1000)

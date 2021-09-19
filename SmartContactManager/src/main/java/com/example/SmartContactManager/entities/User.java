@@ -18,6 +18,7 @@ public class User {
     @NotBlank(message = "Name should not be blank.")
     @Size(min = 3, max = 20, message = "Name should be between 3 to 20 characters")
     private String name;
+
     @Column(unique = true)
     private String email;
     private String Password;
